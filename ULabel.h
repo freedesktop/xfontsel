@@ -47,7 +47,7 @@ ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS
 SOFTWARE.
 
 ******************************************************************/
-/* $XFree86$ */
+/* $XFree86: xc/programs/xfontsel/ULabel.h,v 1.1 2000/02/13 03:26:24 dawes Exp $ */
 
 #ifndef _XawUCSLabel_h
 #define _XawUCSLabel_h
