@@ -21,8 +21,8 @@
 
 bin_PROGRAMS = xfontsel
 
-xfontsel_CFLAGS = $(DEP_CFLAGS)
-xfontsel_LDADD = $(DEP_LIBS)
+xfontsel_CFLAGS = $(XFONTSEL_CFLAGS)
+xfontsel_LDADD = $(XFONTSEL_LIBS)
 
 xfontsel_SOURCES =	\
         ULabel.c \
