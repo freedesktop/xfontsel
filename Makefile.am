@@ -41,13 +41,14 @@ appdefaultdir = $(sysconfdir)/X11/app-defaults
 APPDEFAULTFILES = \
         XFontSel
 
+SUFFIXES = .ad
 
-$(APPDEFAULTFILES): %: %.ad
+.ad:
 	cp $< $@
 
 appdefault_DATA = $(APPDEFAULTFILES)
 
-EXTRA_DIST = $(foreach FILE, $(APPDEFAULTFILES), $(FILE).ad)
+EXTRA_DIST = $(APPDEFAULTFILES:%=%.ad)
 
 CLEANFILES = $(APPDEFAULTFILES)
 
