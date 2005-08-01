@@ -30,7 +30,7 @@ xfontsel_SOURCES =	\
         ULabelP.h \
         xfontsel.c
 
-dist_man_MANS = \
+dist_man1_MANS = \
         xfontsel.man
 
 # App default files  (*.ad)
