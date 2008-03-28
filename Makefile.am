@@ -39,7 +39,7 @@ appdefaultdir = @appdefaultdir@
 
 
 APPDEFAULTFILES = \
-        XFontSel
+        app-defaults/XFontSel
 
 SUFFIXES = .ad
 
