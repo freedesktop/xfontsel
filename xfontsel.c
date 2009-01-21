@@ -83,11 +83,11 @@ void EnableMenu(XtPointer closure);
 void SetCurrentFont(XtPointer closure);
 void QuitAction(Widget w, XEvent *event, String *params, Cardinal *num_params);
 
-XtActionsRec xfontsel_actions[] = {
+static XtActionsRec xfontsel_actions[] = {
     {"Quit",	    QuitAction}
 };
 
-Atom wm_delete_window;
+static Atom wm_delete_window;
 
 Boolean IsXLFDFontName(String fontName);
 
@@ -234,28 +234,28 @@ static void SetCurrentFontCount(void);
 static void SetNoFonts(void);
 static void SetParsingFontCount(int count);
 
-XtAppContext appCtx;
-int numFonts;
-int numBadFonts;
-FontValues *fonts;
-int *scaledFonts;
-int numScaledFonts;
-FieldValueList *fieldValues[FIELD_COUNT];
-FontValues currentFont;
-int matchingFontCount;
+static XtAppContext appCtx;
+static int numFonts;
+static int numBadFonts;
+static FontValues *fonts;
+static int *scaledFonts;
+static int numScaledFonts;
+static FieldValueList *fieldValues[FIELD_COUNT];
+static FontValues currentFont;
+static int matchingFontCount;
 static Boolean anyDisabled = False;
-Widget ownButton;
-Widget fieldBox;
-Widget countLabel;
-Widget currentFontName;
-String currentFontNameString;
-int currentFontNameSize;
-Widget sampleText;
-int textEncoding = -1;
+static Widget ownButton;
+static Widget fieldBox;
+static Widget countLabel;
+static Widget currentFontName;
+static String currentFontNameString;
+static int currentFontNameSize;
+static Widget sampleText;
+static int textEncoding = -1;
 static XFontStruct *sampleFont = NULL;
-Boolean *fontInSet;
+static Boolean *fontInSet;
 static Choice *choiceList = NULL;
-int enabledMenuIndex;
+static int enabledMenuIndex;
 static Boolean patternFieldSpecified[FIELD_COUNT]; /* = 0 */
 
 int

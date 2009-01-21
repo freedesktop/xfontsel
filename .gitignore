@@ -19,3 +19,7 @@ stamp-h1
 xfontsel
 xfontsel.1
 *~
+*.o
+xfontsel-*.tar.*
+ChangeLog
+tags
