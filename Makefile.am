@@ -21,7 +21,7 @@
 
 bin_PROGRAMS = xfontsel
 
-AM_CFLAGS = $(XFONTSEL_CFLAGS)
+AM_CFLAGS = $(XFONTSEL_CFLAGS) $(CWARNFLAGS)
 xfontsel_LDADD = $(XFONTSEL_LIBS)
 
 xfontsel_SOURCES =	\
