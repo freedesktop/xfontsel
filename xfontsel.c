@@ -342,16 +342,8 @@ see 'xfontsel' manual page."
 	viewPort =
 	    XtCreateManagedWidget("viewPort",viewportWidgetClass,pane,NZ);
 	{
-#ifdef USE_TEXT_WIDGET
-	    Widget text =
-		XtCreateManagedWidget("sampleText",asciiTextWidgetClass,viewPort,NZ);
-	    Arg args[1];
-	    XtSetArg( args[0], XtNtextSink, &sampleText );
-	    XtGetValues( text, args, ONE );
-#else
 	    sampleText =
 		XtCreateManagedWidget("sampleText",ucsLabelWidgetClass,viewPort,NZ);
-#endif
 	}
     }
     
@@ -921,11 +913,7 @@ static void SetNoFonts(void)
     XtSetSensitive(fieldBox, False);
     XtSetSensitive(ownButton, False);
     if (AppRes.app_defaults_version >= MIN_APP_DEFAULTS_VERSION) {
-#ifdef USE_TEXT_WIDGET
-	XtUnmapWidget(XtParent(sampleText));
-#else
 	XtUnmapWidget(sampleText);
-#endif
     }
 }
 
@@ -1129,11 +1117,7 @@ void SetCurrentFont(XtPointer closure)
     SetCurrentFontCount();
 
     {
-#ifdef USE_TEXT_WIDGET
-	Widget mapWidget = XtParent(sampleText);
-#else
 	Widget mapWidget = sampleText;
-#endif
 	Display *dpy = XtDisplay(mapWidget);
 	XFontStruct *font = XLoadQueryFont(dpy, currentFontNameString);
 	String sample_text;
