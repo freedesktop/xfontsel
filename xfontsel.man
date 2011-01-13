@@ -192,7 +192,7 @@ a reasonable thing to specify in a resource file.
  $XFILESEARCHPATH/XFontSel
 .PP
 .SH SEE ALSO
-xrdb(1), xfd(1)
+xrdb(__appmansuffix__), xfd(__appmansuffix__)
 .PP
 .SH BUGS
 .PP
