@@ -314,7 +314,7 @@ see 'xfontsel' manual page."
 	    for (f = 0; f < FIELD_COUNT; f++) {
 		char name[10];
 		FieldMenuRec *makeRec = XtNew(FieldMenuRec);
-		sprintf( name, "field%d", f );
+		snprintf( name, sizeof(name), "field%d", f );
 		XtCreateManagedWidget("dash",labelWidgetClass,fieldBox,NZ);
 		field = XtCreateManagedWidget(name, menuButtonWidgetClass,
 			fieldBox, NZ);
@@ -1014,7 +1014,7 @@ static void SetCurrentFontCount(void)
     if (matchingFontCount == 1)
 	strcpy( label, "1 name matches" );
     else if (matchingFontCount)
-	sprintf( label, "%d names match", matchingFontCount );
+	snprintf( label, sizeof(label), "%d names match", matchingFontCount );
     else
 	strcpy( label, "no names match" );
     XtSetArg( args[0], XtNlabel, label );
@@ -1029,7 +1029,7 @@ static void SetParsingFontCount(int count)
     if (count == 1)
 	strcpy( label, "1 name to parse" );
     else
-	sprintf( label, "%d names to parse", count );
+	snprintf( label, sizeof(label), "%d names to parse", count );
     XtSetArg( args[0], XtNlabel, label );
     XtSetValues( countLabel, args, ONE );
     FlushXqueue(XtDisplay(countLabel));
