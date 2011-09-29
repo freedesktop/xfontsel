@@ -546,7 +546,7 @@ void ParseFontNames(XtPointer closure)
 	}
 
 	for (f = 0, p = *fontNames++; f < FIELD_COUNT; f++) {
-	    char *fieldP;
+	    const char *fieldP;
 
 	    if (*p) ++p;
 	    if (*p == DELIM || *p == '\0') {
