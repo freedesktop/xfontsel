@@ -154,19 +154,19 @@ static void Syntax(char *call)
     fprintf (stderr, "where options include:\n");
     fprintf (stderr,
 	"    -display dpy           X server to contact\n");
-    fprintf (stderr, 
+    fprintf (stderr,
 	"    -geometry geom         size and location of window\n");
-    fprintf (stderr, 
+    fprintf (stderr,
 	"    -pattern fontspec      font name pattern to match against\n");
-    fprintf (stderr, 
+    fprintf (stderr,
 	"    -print                 print selected font name on exit\n");
-    fprintf (stderr, 
+    fprintf (stderr,
 	"    -sample string         sample text to use for 1-byte fonts\n");
-    fprintf (stderr, 
+    fprintf (stderr,
 	"    -sample16 string       sample text to use for 2-byte fonts\n");
     fprintf (stderr,
 	"    -sampleUCS string      sample text to use for ISO10646 fonts\n");
-    fprintf (stderr, 
+    fprintf (stderr,
 	"    -scaled                use scaled instances of fonts\n");
     fprintf (stderr, "\n");
     exit (1);
@@ -346,7 +346,7 @@ see 'xfontsel' manual page."
 		XtCreateManagedWidget("sampleText",ucsLabelWidgetClass,viewPort,NZ);
 	}
     }
-    
+
     XtRealizeWidget(topLevel);
     XDefineCursor( XtDisplay(topLevel), XtWindow(topLevel), AppRes.cursor );
     {
@@ -513,7 +513,7 @@ void GetFontNames(XtPointer closure)
 		}
 	    }
 	    else
-		XtAppWarning( appCtx, 
+		XtAppWarning( appCtx,
 		    "internal error; pattern didn't match first font" );
 	}
 	else {
@@ -594,7 +594,7 @@ void ParseFontNames(XtPointer closure)
 	    fontValues->value_index[f] = fieldValues[f]->count - i;
 	    if ((i = v->count++) == v->allocated) {
 		int allocated = (v->allocated += 10);
-		v->font = (int*)XtRealloc( (char *) v->font, 
+		v->font = (int*)XtRealloc( (char *) v->font,
 					  allocated * sizeof(int) );
 	    }
 	    v->font[i] = font - numBadFonts;
@@ -932,7 +932,7 @@ Boolean Matches(register String pattern, register String fontName,
 		marked_this_field = False;
 	    }
 	    else if (!marked_this_field)
-		fields[field] = marked_this_field = True; 
+		fields[field] = marked_this_field = True;
 	    continue;
 	}
 	if (*pattern == '*') {
@@ -990,7 +990,7 @@ void SelectValue(Widget w, XtPointer closure, XtPointer callData)
     choice->prev = choiceList;
     choice->value = val;
     choiceList = choice;
-	
+
     SetCurrentFont(NULL);
     EnableRemainingItems(SkipCurrentField);
 }
