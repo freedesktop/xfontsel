@@ -444,14 +444,13 @@ struct ParseRec {
 void GetFontNames(XtPointer closure)
 {
     Display *dpy = (Display*)closure;
-    ParseRec *parseRec = XtNew(ParseRec);
+    ParseRec *parseRec;
     int f, field, count;
     String *fontNames;
     Boolean *b;
     int work_priority = 0;
 
-    fontNames = parseRec->fontNames =
-	XListFonts(dpy, AppRes.pattern, 32767, &numFonts);
+    fontNames = XListFonts(dpy, AppRes.pattern, 32767, &numFonts);
 
     fonts = (FontValues*)XtMalloc( numFonts*sizeof(FontValues) );
     fontInSet = (Boolean*)XtMalloc( numFonts*sizeof(Boolean) );
@@ -466,6 +465,8 @@ void GetFontNames(XtPointer closure)
 	return;
     }
     numBadFonts = 0;
+    parseRec = XtNew(ParseRec);
+    parseRec->fontNames = fontNames;
     parseRec->fonts = fonts;
     parseRec->num_fonts = count = matchingFontCount = numFonts;
     parseRec->fieldValues = fieldValues;
