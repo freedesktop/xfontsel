@@ -332,10 +332,8 @@ see 'xfontsel' manual page."
 
 	viewPort =
 	    XtCreateManagedWidget("viewPort",viewportWidgetClass,pane,NZ);
-	{
-	    sampleText =
-		XtCreateManagedWidget("sampleText",ucsLabelWidgetClass,viewPort,NZ);
-	}
+	sampleText =
+	    XtCreateManagedWidget("sampleText",ucsLabelWidgetClass,viewPort,NZ);
     }
 
     XtRealizeWidget(topLevel);
