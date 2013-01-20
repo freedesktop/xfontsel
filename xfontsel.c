@@ -1112,7 +1112,7 @@ void SetCurrentFont(XtPointer closure)
 	XFontStruct *font = XLoadQueryFont(dpy, currentFontNameString);
 	String sample_text;
 	if (font == NULL)
-	    XtUnmapWidget(mapWidget);
+	    XtSetSensitive(mapWidget, False);
 	else {
 	    int nargs = 1;
 	    Arg args[3];
@@ -1137,6 +1137,7 @@ void SetCurrentFont(XtPointer closure)
 		nargs = 3;
 	    }
 	    XtSetValues( sampleText, args, nargs );
+	    XtSetSensitive(mapWidget, True);
 	    XtMapWidget(mapWidget);
 	    if (sampleFont) XFreeFont( dpy, sampleFont );
 	    sampleFont = font;
