@@ -462,13 +462,16 @@ void GetFontNames(XtPointer closure)
 	SetNoFonts();
 	return;
     }
+    count = matchingFontCount = numFonts;
     numBadFonts = 0;
     parseRec = XtNew(ParseRec);
-    parseRec->fontNames = fontNames;
-    parseRec->fonts = fonts;
-    parseRec->num_fonts = count = matchingFontCount = numFonts;
-    parseRec->fieldValues = fieldValues;
-    parseRec->start = 0;
+    *parseRec = (ParseRec) {
+        .fontNames = fontNames,
+        .num_fonts = count,
+        .start = 0,
+        .fonts = fonts,
+        .fieldValues = fieldValues
+    };
     /* this is bogus; the task should be responsible for quantizing...*/
     while (count > PARSE_QUANTUM) {
 	ParseRec *prevRec = parseRec;
