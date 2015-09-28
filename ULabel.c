@@ -206,7 +206,7 @@ static void _XawLabelDrawUCS(Display *dpy, Drawable d, GC gc,
             codepoint=(unsigned)'?';
             str++;
         }
-	ptr->byte1 = (codepoint >> 8) & 0xff;;
+	ptr->byte1 = (codepoint >> 8) & 0xff;
 	ptr->byte2 = codepoint & 0xff;
     }
     XDrawString16(dpy, d, gc, x, y, buf2b, ptr - buf2b);
@@ -245,7 +245,7 @@ static int _XawLabelWidthUCS(
             codepoint=(unsigned)'?';
             str++;
         }
-	ptr->byte1 = (codepoint >> 8) & 0xff;;
+	ptr->byte1 = (codepoint >> 8) & 0xff;
 	ptr->byte2 = codepoint & 0xff;
     }
     return XTextWidth16(fs, buf2b, ptr - buf2b);
